@@ -1,0 +1,40 @@
+<p>This component is for testing various ways input data can be handled.</p>
+<ul>
+    <li>Ngmodel</li>
+    <li>Binding input event to method</li>
+    <li>Binding keyup event to method</li>
+    <li>Template reference variable</li>
+    <li>Specific Key</li>
+</ul>
+<div class="custom">
+    <h3>NgModel</h3>
+    <!-- Banana in the box convention for ngModel -->
+    <input [(ngModel)]="input_ngmodel">
+    <p>Output {{input_ngmodel}}</p>
+</div>
+<div class="custom">
+    <h3>Binding input event to method</h3>
+    <input (input)="getFromValueBinding($event)">
+    <p>Output {{input_inputBinding}}</p>
+</div>
+<div class="custom">
+    <h3>Binding keyup event to method</h3>
+    <input (keyup)="getFromKeyupBinding($event)">
+    <p>Output {{input_keyupBinding}}</p>
+</div>
+<div class="custom">
+    <h3>Template reference variable</h3>
+    <input #box (keyup)="0">
+    <p>Output {{box.value}}</p>
+</div>
+<div class="custom">
+    <h3>Specific Key</h3>
+    <input #inputTRV2 (keyup.enter)="getFromEnterKeyBinding(inputTRV2.value); inputTRV2.value = ''">
+    <p>Output {{input_enterkeyBinding}}</p>
+    <p>Output from the above input {{box.value}}</p>
+</div>
+
+<button (click)="sendtoSS()">Add TO SS</button>
+<p>The session storage value : {{type}}</p>
+<button (click)="getfromss()">Get from SS</button>
+
