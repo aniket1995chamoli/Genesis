@@ -10,7 +10,7 @@ export class InputComponent implements OnInit {
   input_ngmodel:string;
   input_inputBinding:string;
   input_keyupBinding:string;
-  input_enterkeyBinding:string
+  input_enterkeyBinding:string;
 
   type:string;
 
@@ -31,16 +31,6 @@ export class InputComponent implements OnInit {
 
   getFromEnterKeyBinding(value) {
     this.input_enterkeyBinding = value;
-  }
-
-  sendtoSS() {
-    const dets = {baselinetype : '', presetType: 'CNV'};
-    sessionStorage.setItem('chev', JSON.stringify(dets));
-  }
-
-  getfromss() {
-    console.log(sessionStorage.getItem('chev'));
-    this.type = JSON.parse(sessionStorage.getItem('chev')).presetType;
   }
 
 }

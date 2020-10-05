@@ -1,0 +1,5 @@
+<h3>Welcome to Angular.io examples</h3>
+
+<a class="heads" *ngFor="let map of urlMapping" [routerLink]="map.url" [id]="map.id">{{map.name}}</a>
+
+<br><br><router-outlet></router-outlet>

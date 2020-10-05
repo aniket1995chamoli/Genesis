@@ -1,27 +1,11 @@
 # AngularPlayPen
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.1.
+This project is created to play around with the various concepts covered in angular.io
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* The basic project structure is that each section of the angular.io is implemented as a component here.
+* So a tab like 'Main Concept' is a component here. Such parent tabs are kept in 'main' module.
+* Under 'Main Concept' there are further parent topics like 'Component', 'Templates' etc. These are also all implemented as components and kept together in 'sub' module.
+* Finally there are the leaf tab are the actual concepts themselves such as 'Input','Pipes' etc. These are implemented as components and grouped in the moduel 'topic'.
+* Basic url routing is done.
+* Also this lacks any proper css what-so-ever. That would be handled (if it is even possible) at the end when all concepts have been covered. 
+* The main aim to check out all basic concepts explored in angular.io

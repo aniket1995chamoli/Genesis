@@ -1,0 +1,60 @@
+<p>This component is for testing various usage of pipes and its workings.</p>
+<br>
+<div class="heads">
+    <p>Printing date without pipe : {{birthday}}</p>
+    <p>Printing date with date pipe : {{birthday | date}}</p>
+</div>
+<br>
+<div class="heads">
+    <p>Printing value without currency pipe : {{currency}}</p>
+    <p>Printing value with currency pipe for dollar: {{currency | currency : 'EUR'}}</p>
+    <p>Printing value with currency pipe for rupee: {{currency | currency : 'INR'}}</p>
+</div>
+<br>
+<div class="heads">
+    <p>Using slice pipe: {{slice | slice: 1: 5}}</p>
+</div>
+<br>
+<div class="heads">
+    <p>Format binding - binding the format parameter of date pipe and modify accordingly.</p>
+    <p>Specify a fixed date format ('DD/MM/YY'): {{ birthday | date : 'DD/MM/YY'}}</p>
+    <p>Toggle date format : {{ birthday | date: customFormat}}</p>
+    <button (click)="onToggle()">Toggle Format</button>
+
+</div>
+<br>
+<div class="heads">
+    <p>Chaining pipe : {{ birthday | date : customFormat | uppercase}}</p>
+</div>
+<br>
+<div class="heads">
+    <p>Custom Pipes</p>
+    <p>Defined a custom pip ExponentPipe which exponents a given value</p>
+    <p>Passing the value using custom pipe name "exponent" for value <input [(ngModel)]="exponent_val" maxlength="2"> and exponent <input [(ngModel)]="exponent_exp" maxlength="2"> : {{ exponent_val | exponent: exponent_exp }}</p>
+</div>
+<br>
+<div class="heads">
+    <p>Pipes and arrays. Does adding value to an existing array trigger pipe</p>
+    <p>Transformed value : {{ array_one | add }}</p>
+    <input #pipeArray (keyup.enter)="addToArray_one(pipeArray.value)">
+    <p>Value is getting added but its not triggering the pipe transformation.</p>
+</div>
+<br>
+<div class="heads">
+    <p>Assigning the array to another array to trigger change in refence and subsequently ng will trigger pipe</p>
+    <p>Transformed value : {{ array_two | add }}</p>
+    <input #pipeArrayTwo (keyup.enter)="addToArray_two(pipeArrayTwo.value)">
+</div>
+<br>
+<div class="heads" *ngIf="followers">
+    <p>Basic httpclient</p>
+    <p *ngFor="let follower of followers">
+        {{ follower }}
+    </p>
+</div>
+<br>
+<div class="heads">
+    <p>Pipe and http client</p>
+    <p *ngFor="let value of ('https://api.github.com/users/koushikkothagal/followers' | jsonPipe)">{{ value }}</p>
+    <p>NEED TO DEBUG WHY PIPE IS NOT RETURNING DATA!</p>
+</div>
