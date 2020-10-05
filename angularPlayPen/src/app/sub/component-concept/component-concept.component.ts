@@ -9,7 +9,8 @@ export class ComponentConceptComponent implements OnInit {
 
   urlMapping = [
     {url: 'input', name: 'User Input'},
-    {url: 'pipes', name: 'Pipes'}
+    {url: 'pipes', name: 'Pipes'},
+    {url: 'lifecycle', name: 'Life Cycle'}
   ]
   constructor() { }
 

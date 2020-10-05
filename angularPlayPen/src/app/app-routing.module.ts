@@ -5,6 +5,7 @@ import { MainConceptComponent } from './main/main-concept/main-concept.component
 import { MainComponent } from './main/main.component';
 import { ComponentConceptComponent } from './sub/component-concept/component-concept.component';
 import { InputComponent } from './topic/input/input.component';
+import { LifecycleComponent } from './topic/lifecycle/lifecycle.component';
 import { PipesComponent } from './topic/pipes/pipes.component';
 
 const routes: Route[] = [
@@ -14,6 +15,7 @@ const routes: Route[] = [
       {path: 'component', component: ComponentConceptComponent, children: [
         {path: 'input', component: InputComponent},
         {path: 'pipes', component: PipesComponent},
+        {path: 'lifecycle', component: LifecycleComponent},
         {path: '*****', component: ErrorComponent}
       ]},
       {path: '****', component: ErrorComponent}

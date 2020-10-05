@@ -9,3 +9,4 @@ This project is created to play around with the various concepts covered in angu
 * Basic url routing is done.
 * Also this lacks any proper css what-so-ever. That would be handled (if it is even possible) at the end when all concepts have been covered. 
 * The main aim to check out all basic concepts explored in angular.io
+

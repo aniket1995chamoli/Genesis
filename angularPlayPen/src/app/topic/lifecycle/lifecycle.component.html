@@ -1,0 +1,5 @@
+<p>In lifecycle component</p>
+<input #input (keyup.enter)="changeheroName(input.value)">
+<p appLifecycle *ngFor="let a of heros">{{ a }}</p>
+<button (click)="deleteHero()">Click</button>
+<!-- <app-dummy [hero]="heroName"></app-dummy> -->
