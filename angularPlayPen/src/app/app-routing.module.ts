@@ -3,6 +3,7 @@ import { Route, RouterModule } from '@angular/router';
 import { ErrorComponent } from './error/error.component';
 import { MainConceptComponent } from './main/main-concept/main-concept.component';
 import { MainComponent } from './main/main.component';
+import { PitComponent } from './pit/pit.component';
 import { ComponentConceptComponent } from './sub/component-concept/component-concept.component';
 import { InputComponent } from './topic/input/input.component';
 import { LifecycleComponent } from './topic/lifecycle/lifecycle.component';
@@ -22,6 +23,7 @@ const routes: Route[] = [
     ]},
     {path: '***', component: ErrorComponent}
   ]},
+  {path: 'pit', component: PitComponent},
   {path: '**', component: ErrorComponent}
 ];
 

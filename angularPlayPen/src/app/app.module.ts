@@ -7,6 +7,7 @@ import { TopicModule } from './topic/topic.module';
 import { MainModule } from './main/main.module';
 import { SubModule } from './sub/sub.module';
 import { ErrorComponent } from './error/error.component';
+import { PitModule } from './pit/pit.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ErrorComponent } from './error/error.component';
     AppRoutingModule,
     TopicModule,
     MainModule,
-    SubModule
+    SubModule,
+    PitModule
     ],
   providers: [],
   bootstrap: [AppComponent]

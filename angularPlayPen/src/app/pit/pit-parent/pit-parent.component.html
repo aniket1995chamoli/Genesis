@@ -1,0 +1,6 @@
+<button style="padding: 4px; border-radius: 4px" (click)="changeFirstChildView()">Change First Child View</button>
+<button style="padding: 4px; border-radius: 4px" (click)="changeChildrenViews()">Change All Children Views</button>
+<button style="padding: 4px; border-radius: 4px" (click)="changeFirstChildContent()">Change First Child Content</button>
+<button style="padding: 4px; border-radius: 4px" (click)="changeChildrenContents()">Change All Children Contents</button>
+<app-pit-child *ngFor="let message of messages" [message]="message"></app-pit-child>
+<ng-content></ng-content>

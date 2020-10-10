@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularPlayPen';
+  urlMapping = [
+    {url:'home', name:'Angular.IO'},
+    {url:'pit', name:'Pit'}
+  ]
   
 }
