@@ -1,6 +1,20 @@
 <hr>
 <p style="font-family: Arial, Helvetica, sans-serif; font-size: large; text-align: center;">Welcome to the Pit!</p>
+<div>
+<h2>View Child and Content Child</h2>
+<p class="ps"> To avoid confusion, when a component is being referred, the name of the component would be in italics. Also forgive for the weird names being used for component. I am still familiarizing with the conventions.</p>
+<p style="font-size: large;">OverView:</p>
+<p class="content">So basically there are 3 components in play : <i>pit, pit-child and pit-parent.</i> <i>pit-child</i>'s job is to print the message it recieves either from <i>pit-parent</i> or from <i>pit</i> through <i>pit-parent</i>.</p>
+<p class="content">The main component in play is the <i>pit-parent</i> as it both sends message to <i>pit-child</i> (so <i>pit-child</i> becomes child view for <i>pit-parent</i>) and recieves message from <i>pit</i>(so <i>pit</i> <b>projects content</b> onto <i>pit-parent</i>).</p>
+<p class="content">For the <i>pit-parent</i> to access the <i>pit-child</i>'s content, we use decorators : viewChild (to access <b>only first</b> <i>pit-child</i>) and viewChildren (to access <b>all</b> the <i>pit-child</i>). Using these decorators we can access the lifehook methods (like ngOnInit) and properties of the child component. </p> 
+<p class="content">Similarly for the <i>pit-parent</i> to access the content sent by <i>pit</i> ie. <b>Projected Content</b>, we use decorators : contentChild (to access <b>only first</b> component sent by <i>pit</i>) and contentChildren (to access <b>all</b> the content sent by <i>pit</i>). Using these decorators we can access the lifehook methods (like ngOnInit) and properties of the component sent by parent. </p> 
+<p class="content">The lifecycle sequence is that the view and content are initialized after constructor. So any viewchild or contentchild operations that we do in constructor would result in error as they have not be initialized yet.</p>
+<p class="content">For this we use lifecycle hook methods such as ngAfterContentInit() and ngAfterViewInit().</p>
+<p style="font-size: large;">Working:</p>
+<p class="working">In the below implementation, there are messages passed from <i>pit</i> to <i>pit-child</i> (via <i>pit-parent</i>) and some from <i>pit-parent</i> to <i>pit-child</i>. The 3 buttons are used to change view (in this case that which is passed from <i>pit-parent</i> to <i>pit-child</i>) and content (in this case that which is passed from <i>pit</i> to <i>pit-parent</i>).</p>
+<p class="working">The four buttons are used to modify first view, all views, first content and all content.</p>
+<p class="working">The input is for entering an index ie. the number of the view/content we wish to modify dynamically.</p>
 <app-pit-parent>
     <app-pit-child *ngFor="let message of messages" [message]="message"></app-pit-child>
-    <app-pit-child #special [message]="title"></app-pit-child>
 </app-pit-parent>
+</div>

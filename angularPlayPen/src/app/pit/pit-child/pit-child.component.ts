@@ -6,7 +6,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./pit-child.component.css']
 })
 export class PitChildComponent implements OnInit {
-  @Input() message:string;
+  @Input() message:any;
 
   constructor() { }
 

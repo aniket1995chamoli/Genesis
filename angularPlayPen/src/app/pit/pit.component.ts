@@ -6,11 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pit.component.css']
 })
 export class PitComponent implements OnInit {
-  title = "lone wolf will be unaffected";
-  messages:string[] = [
-    "First Projected Content",
-    "Second Projected Content"];
-
+  messages = [
+    {m: 'First Projected Content', id: 1},
+    {m: 'Second Projected Content', id: 2},
+    {m: 'Third Projected Content', id: 3}
+  ]
   constructor() { }
 
   ngOnInit(): void {

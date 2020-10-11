@@ -2,5 +2,7 @@
 <button style="padding: 4px; border-radius: 4px" (click)="changeChildrenViews()">Change All Children Views</button>
 <button style="padding: 4px; border-radius: 4px" (click)="changeFirstChildContent()">Change First Child Content</button>
 <button style="padding: 4px; border-radius: 4px" (click)="changeChildrenContents()">Change All Children Contents</button>
+<p>Enter view index number to remain unaffected: </p><input #viewIndex (keyup.enter)="setForViewIndex(viewIndex.value)">
+<p>Enter content index number to remain unaffected: </p><input #contentIndex (keyup.enter)="setForContentIndex(contentIndex.value)">
 <app-pit-child *ngFor="let message of messages" [message]="message"></app-pit-child>
 <ng-content></ng-content>
