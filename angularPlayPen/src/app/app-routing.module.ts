@@ -5,6 +5,7 @@ import { MainConceptComponent } from './main/main-concept/main-concept.component
 import { MainComponent } from './main/main.component';
 import { PitComponent } from './pit/pit.component';
 import { ComponentConceptComponent } from './sub/component-concept/component-concept.component';
+import { ComponentInteractionComponent } from './topic/component-interaction/component-interaction.component';
 import { InputComponent } from './topic/input/input.component';
 import { LifecycleComponent } from './topic/lifecycle/lifecycle.component';
 import { PipesComponent } from './topic/pipes/pipes.component';
@@ -17,6 +18,7 @@ const routes: Route[] = [
         {path: 'input', component: InputComponent},
         {path: 'pipes', component: PipesComponent},
         {path: 'lifecycle', component: LifecycleComponent},
+        {path: 'componentInteraction', component: ComponentInteractionComponent},
         {path: '*****', component: ErrorComponent}
       ]},
       {path: '****', component: ErrorComponent}

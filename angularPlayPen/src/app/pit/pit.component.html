@@ -17,4 +17,35 @@
 <app-pit-parent>
     <app-pit-child *ngFor="let message of messages" [message]="message"></app-pit-child>
 </app-pit-parent>
+<h2>DOM, Shadow DOM and Virtual DOM</h2>
+<div class="content">
+    <p><u>DOM</u> is Document Object Model. It is in plain words the object tree of the html tags and elements. Lots of tools are available for visualizing the DOM.</p>
+    <p>A simple way to see the DOM is using the document. Write some boiler plate html with basic H1 tag. View in browser, open browser console type document. You can see the head and body tag as json objects.</p>
+    <p>We can use this document object to manipulate the DOM. So say if we wanna change the text of the H1 tag, we use document.querySelector or document.getElementById etc. </p>
+    <p><u>Shadow DOM</u> is little trickier. So if we add a webm video to our html using the video and source tag and inspect this video section in the html, we really cant inspect all elements of this video player ie. play, full screen, sound level etc. This is because the video component is custom component built by chrome using shadow DOM.</p>
+    <p>Chrome doesnt show shadow DOM by default. We can enable from settings -> Elements -> show user agent shadown DOM. Upon enabling, we can click the video tag and see shadow root.</p>
+    <p>We can proceed to inspect the play button. One key thing to note is that if lets say we set the background color for div to be blue. All divs would have a blue background. However the div within the shadow DOM stay unaffected. This ability of masking css ie encapsulating it in shadow DOM is also used by Angular to encapsulate component styles.</p>
+    <p><u>Virtual DOM</u> is a concept where a copy of the DOM is kept in memory and using efficient algorithms, a sync is maintained between the virual and real DOM.</p>
+    <p>Virtual DOM boosts DOM manipulation quite significantly as frequent DOM manipulation in a large scale application can be very costly as DOM manipulations are quite heavy.</p>
+</div>
+<h2>View Encapsulation</h2>
+<div>
+    <p>View encapsulation deals with the scoping of styles ie css which is applied to a component. These styles could be local to the component or global ie those used styles.css.</p>
+    <p>View Encapsulation are of 3 modes : </p>
+    <ul>
+        <li>
+            <p>Shadow dom : Uses the browsers shadow DOM implementation to attatch shadow DOM to the component's host element and puts the component's view inside that shadow DOM</p>
+        </li>
+        <li>
+            <p>Native : This mode is now deprecated as it was using a deprecated shadow DOM implementation v0. The current shadow DOM implementation is v1.</p>
+        </li>
+        <li>
+            <p>Emulated : This emulates the behaviour of shadow DOM. This is because shadow DOM is not universally browser compatible like ie11 doesnt support shadow DOM without the use of polyfill.</p>
+            <p>This is why emulated is the default encapsulation for angular. Also since this is default, styles are encapsulated and not available outside component even to parent or child!</p>
+        </li>
+        <li>
+            <p>None : None is an option available because if suppose we wish to create shared components, then having a common shared css can be achieved using None mode of view encapsulation.</p>
+        </li>
+    </ul>
+</div>
 </div>

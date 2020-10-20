@@ -8,11 +8,13 @@ import { MainModule } from './main/main.module';
 import { SubModule } from './sub/sub.module';
 import { ErrorComponent } from './error/error.component';
 import { PitModule } from './pit/pit.module';
+import { ComponentStylesComponent } from './app/topic/component-styles/component-styles.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ErrorComponent
+    ErrorComponent,
+    ComponentStylesComponent
   ],
   imports: [
     BrowserModule,

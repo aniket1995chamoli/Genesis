@@ -10,11 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { DummyComponent } from './dummy/dummy.component';
 import { LifecycleDirective } from './lifecycle.directive';
+import { ComponentInteractionComponent } from './component-interaction/component-interaction.component';
+import { ChildOneComponent } from './component-interaction/child-one/child-one.component';
+import { ComponentStyleComponent } from './component-style/component-style.component';
 
 
 
 @NgModule({
-  declarations: [InputComponent, PipesComponent, ExponentPipe, AddPipe, JsonPipePipe, LifecycleComponent, DummyComponent, LifecycleDirective],
+  declarations: [InputComponent, PipesComponent, ExponentPipe, AddPipe, JsonPipePipe, LifecycleComponent, DummyComponent, LifecycleDirective, ComponentInteractionComponent, ChildOneComponent, ComponentStyleComponent],
   imports: [
     CommonModule,
     FormsModule,

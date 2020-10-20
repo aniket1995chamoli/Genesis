@@ -1,0 +1,17 @@
+<p>This component and its child(child-one component) are for displaying the various ways parent child interaction can happen.</p>
+<ul>
+    <li>
+        <div>
+            <p><u>Pass data from parent to child with input binding</u></p>
+            <p>{{master}} commands his slaves!</p>
+            <app-child-one *ngFor="let slave of slaves" [inputData]="slave" [master]="master"></app-child-one>
+        </div>
+    </li>
+    <li>
+        <div>
+            <p><u>Intercept input property changes with a setter</u></p>
+            <p>{{master}} is sending {{values}}. Report for duty soldiers!</p> 
+            <app-child-one *ngFor="let value of values" [value]="value"></app-child-one>
+        </div>
+    </li>
+</ul>
